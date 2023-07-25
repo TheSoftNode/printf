@@ -9,21 +9,21 @@
 int op_i(va_list i)
 {
 	int a[10];
-	int j, m, n, sum, count;
+	int j, d, n, sum, counter;
 
 	n = va_arg(i, int);
-	count = 0;
-	m = 1000000000;
-	a[0] = n / m;
+	counter = 0;
+	d = 1000000000;
+	a[0] = n / d;
 	for (j = 1; j < 10; j++)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		d /= 10;
+		a[j] = (n / d) % 10;
 	}
 	if (n < 0)
 	{
 		_putchar('-');
-		count++;
+		counter++;
 		for (j = 0; j < 10; j++)
 			a[j] *= -1;
 	}
@@ -33,10 +33,10 @@ int op_i(va_list i)
 		if (sum != 0 || j == 9)
 		{
 			_putchar('0' + a[j]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 
 /**
@@ -48,10 +48,10 @@ int op_i(va_list i)
 int op_d(va_list d)
 {
 	int a[10];
-	int j, m, n, sum, count;
+	int j, m, n, sum, counter;
 
 	n = va_arg(d, int);
-	count = 0;
+	counter = 0;
 	m = 1000000000;
 	a[0] = n / m;
 	for (j = 1; j < 10; j++)
@@ -62,7 +62,7 @@ int op_d(va_list d)
 	if (n < 0)
 	{
 		_putchar('-');
-		count++;
+		counter++;
 		for (j = 0; j < 10; j++)
 			a[j] *= -1;
 	}
@@ -72,8 +72,8 @@ int op_d(va_list d)
 		if (sum != 0 || j == 9)
 		{
 			_putchar('0' + a[j]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }

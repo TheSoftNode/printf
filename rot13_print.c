@@ -11,7 +11,7 @@ int op_R(va_list R)
 {
 	char *str;
 	unsigned int i, j;
-	int count = 0;
+	int counter = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
@@ -25,15 +25,15 @@ int op_R(va_list R)
 			if (in[j] == str[i])
 			{
 				_putchar(out[j]);
-				count++;
+				counter++;
 				break;
 			}
 		}
 		if (!in[j])
 		{
 			_putchar(str[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }

@@ -23,14 +23,14 @@ int op_c(va_list c)
  */
 int op_s(va_list s)
 {
-	int count;
+	int counter;
 	char *str = va_arg(s, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	for (count = 0; str[count]; count++)
+	for (counter = 0; str[counter]; counter++)
 	{
-		_putchar(str[count]);
+		_putchar(str[counter]);
 	}
-	return (count);
+	return (counter);
 }

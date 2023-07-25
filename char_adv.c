@@ -9,20 +9,20 @@
  */
 static int hex_print(char c)
 {
-	int count;
+	int counter;
 	char diff = 'A' - ':';
 	char d[2];
 
 	d[0] = c / 16;
 	d[1] = c % 16;
-	for (count = 0; count < 2; count++)
+	for (counter = 0; counter < 2; counter++)
 	{
-		if (d[count] >= 10)
-			_putchar('0' + diff + d[count]);
+		if (d[counter] >= 10)
+			_putchar('0' + diff + d[counter]);
 		else
-			_putchar('0' + d[count]);
+			_putchar('0' + d[counter]);
 	}
-	return (count);
+	return (counter);
 }
 
 /**
@@ -34,7 +34,7 @@ static int hex_print(char c)
 int op_S(va_list S)
 {
 	unsigned int i;
-	int count = 0;
+	int counter = 0;
 	char *str = va_arg(S, char *);
 
 	if (str == NULL)
@@ -45,16 +45,16 @@ int op_S(va_list S)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count += 2;
-			count += hex_print(str[i]);
+			counter += 2;
+			counter += hex_print(str[i]);
 		}
 		else
 		{
 			_putchar(str[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 
 /**
@@ -66,7 +66,7 @@ int op_S(va_list S)
 int op_r(va_list r)
 {
 	char *str;
-	int i, count = 0;
+	int i, counter = 0;
 
 	str = va_arg(r, char *);
 	if (str == NULL)
@@ -77,7 +77,7 @@ int op_r(va_list r)
 	for (i -= 1; i >= 0; i--)
 	{
 		_putchar(str[i]);
-		count++;
+		counter++;
 	}
-	return (count);
+	return (counter);
 }

@@ -13,6 +13,7 @@ typedef struct formats
 	int (*func)(va_list);
 } formats_t;
 
+/* Prototype functions starts here*/
 int _putchar(char c);
 int _printf(const char *format, ...);
 int op_c(va_list c);

@@ -10,7 +10,7 @@ int op_u(va_list u)
 {
 	unsigned int a[10];
 	unsigned int i, m, n, sum;
-	int count;
+	int counter;
 
 	n = va_arg(u, unsigned int);
 	m = 1000000000; /* (10 ^ 9) */
@@ -20,16 +20,16 @@ int op_u(va_list u)
 		m /= 10;
 		a[i] = (n / m) % 10;
 	}
-	for (i = 0, sum = 0, count = 0; i < 10; i++)
+	for (i = 0, sum = 0, counter = 0; i < 10; i++)
 	{
 		sum += a[i];
 		if (sum || i == 9)
 		{
 			_putchar('0' + a[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 
 /**
@@ -42,7 +42,7 @@ int op_o(va_list o)
 {
 	unsigned int a[11];
 	unsigned int i, m, n, sum;
-	int count;
+	int counter;
 
 	n = va_arg(o, unsigned int);
 	m = 1073741824; /* (8 ^ 10) */
@@ -52,16 +52,16 @@ int op_o(va_list o)
 		m /= 8;
 		a[i] = (n / m) % 8;
 	}
-	for (i = 0, sum = 0, count = 0; i < 11; i++)
+	for (i = 0, sum = 0, counter = 0; i < 11; i++)
 	{
 		sum += a[i];
 		if (sum || i == 10)
 		{
 			_putchar('0' + a[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 
 /**
@@ -74,7 +74,7 @@ int op_b(va_list b)
 {
 	unsigned int n, m, i, sum;
 	unsigned int a[32];
-	int count;
+	int counter;
 
 	n = va_arg(b, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
@@ -84,14 +84,14 @@ int op_b(va_list b)
 		m /= 2;
 		a[i] = (n / m) % 2;
 	}
-	for (i = 0, sum = 0, count = 0; i < 32; i++)
+	for (i = 0, sum = 0, counter = 0; i < 32; i++)
 	{
 		sum += a[i];
 		if (sum || i == 31)
 		{
 			_putchar('0' + a[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }

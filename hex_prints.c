@@ -12,7 +12,7 @@ int print_hex(unsigned int n, unsigned int c)
 	unsigned int a[8];
 	unsigned int i, m, sum;
 	char diff;
-	int count;
+	int counter;
 
 	m = 268435456; /* (16 ^ 7) */
 	if (c)
@@ -25,7 +25,7 @@ int print_hex(unsigned int n, unsigned int c)
 		m /= 16;
 		a[i] = (n / m) % 16;
 	}
-	for (i = 0, sum = 0, count = 0; i < 8; i++)
+	for (i = 0, sum = 0, counter = 0; i < 8; i++)
 	{
 		sum += a[i];
 		if (sum || i == 7)
@@ -34,10 +34,10 @@ int print_hex(unsigned int n, unsigned int c)
 				_putchar('0' + a[i]);
 			else
 				_putchar('0' + diff + a[i]);
-			count++;
+			counter++;
 		}
 	}
-	return (count);
+	return (counter);
 }
 /**
  * op_x - takes an unsigned int and prints it in lowercase hex notation

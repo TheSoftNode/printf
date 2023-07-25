@@ -10,7 +10,7 @@
 int op_R(va_list R)
 {
 	char *str;
-	unsigned int i, j;
+	unsigned int i, k;
 	int counter = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
@@ -20,16 +20,16 @@ int op_R(va_list R)
 		str = "(ahyy)";
 	for (i = 0; str[i]; i++)
 	{
-		for (j = 0; in[j]; j++)
+		for (k = 0; in[k]; k++)
 		{
-			if (in[j] == str[i])
+			if (in[k] == str[i])
 			{
-				_putchar(out[j]);
+				_putchar(out[k]);
 				counter++;
 				break;
 			}
 		}
-		if (!in[j])
+		if (!in[k])
 		{
 			_putchar(str[i]);
 			counter++;
